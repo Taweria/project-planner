@@ -63,6 +63,7 @@ export function generateHTML(data) {
                         }
                         break;
                     default:
+                        article.style.display = "block";
                         break;
                 };
             });
