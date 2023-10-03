@@ -3,7 +3,7 @@ import { remainingDays } from "./remainingDays.js";
 let tasks = document.querySelector(".tasks");
 
 //create elements
-function generateHTML(data) {
+export function generateHTML(data) {
     const task = document.createElement("article");
     task.classList.add("task");
   
@@ -94,6 +94,6 @@ form.addEventListener("submit", (e) => {
         }
     });
 
-    addToLocaleStorage(currentData);
+    addToLocalStorage(currentData);
     resetForm();
 })
