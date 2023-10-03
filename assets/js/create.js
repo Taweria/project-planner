@@ -1,4 +1,6 @@
 import { remainingDays } from "./remainingDays.js";
+import { addToLocalStorage } from "./localStorage.js";
+import { removeFromLocalStorage } from "./localStorage.js";
 
 let tasks = document.querySelector(".tasks");
 
@@ -39,6 +41,7 @@ export function generateHTML(data) {
     //attacher un gestionnaire d'événement au bouton de supression
     delItem.addEventListener('click', () => {
         //supprimer la div entière
+        removeFromLocalStorage(task);
         task.remove();
     });
 
