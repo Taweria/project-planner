@@ -33,13 +33,19 @@ function generateHTML(data) {
         delItem.appendChild(delItemImg);
         delItemImg.classList.add("delItemImg");
 
+        //attacher un gestionnaire d'événement au bouton de supression
+        delItem.addEventListener('click', () => {
+            //supprimer la div entière
+            task.remove();
+        });
+
         const modifyItem = document.createElement("button");
         task.appendChild(modifyItem);
         modifyItem.classList.add("modifyItem");
 
         const modifyItemImg = document.createElement("img");
         modifyItemImg.src = "./assets/img/crayon-de-couleur.png";
-        modifyItem.appendChild(modifyItemImg);
+        task.appendChild(modifyItemImg);
         modifyItemImg.classList.add("modifyItemImg");
 
         tasks.appendChild(task);
