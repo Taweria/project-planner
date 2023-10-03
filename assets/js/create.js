@@ -30,7 +30,7 @@ function generateHTML(data) {
 
         const delItemImg = document.createElement("img");
         delItemImg.src = "./assets/img/poubelle.png";
-        task.appendChild(delItemImg);
+        delItem.appendChild(delItemImg);
         delItemImg.classList.add("delItemImg");
 
         const modifyItem = document.createElement("button");
@@ -39,7 +39,7 @@ function generateHTML(data) {
 
         const modifyItemImg = document.createElement("img");
         modifyItemImg.src = "./assets/img/crayon-de-couleur.png";
-        task.appendChild(modifyItemImg);
+        modifyItem.appendChild(modifyItemImg);
         modifyItemImg.classList.add("modifyItemImg");
 
         tasks.appendChild(task);
