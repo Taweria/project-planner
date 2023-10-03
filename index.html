@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,46 @@
     <link rel="stylesheet" href="assets/dist/style.css" type="text/css">
     <script defer src="assets/js/main.js"></script>
 </head>
+
 <body>
-    <h1 class="text-blue-500"></h1>
-    
+    <header>
+        <h1>My Planner</h1>
+        <label for="sort">Sort</label>
+        <select name="sort" id="sort">
+            <option value="none"></option>
+            <option value="urgent">Urgent</option>
+            <option value="nom">name</option>
+        </select>
+        <label for="filter">Filter</label>
+        <select name="filter" id="filter">
+            <option value="none"></option>
+            <option value="toDo">To do</option>
+            <option value="doing">Doing</option>
+            <option value="done">Done</option>
+        </select>
+    </header>
+
+
+    <main>
+        <form>
+            <div class="form1">
+                <input name="name" type="text" id="name" placeholder="Name">
+                <input name="date" type="date" id="date">
+            </div>
+
+            <div class="form2">
+                <input name="description" type="text" id="desc" placeholder="Description">
+                <label for="pending"></label>
+                <select name="pending" id="pending">
+                    <option value="none"></option>
+                    <option value="toDo-form">To Do</option>
+                    <option value="doing-form">Doing</option>
+                    <option value="done-form">Done</option>
+                </select>
+            </div>
+        </form>
+        <button>Add</button>
+    </main>
 </body>
+
 </html>
