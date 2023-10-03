@@ -81,13 +81,11 @@ form.addEventListener("submit", (e) => {
     generateHTML(currentData);
 
     let days = document.querySelectorAll(".date");
-    console.log(days);
     
     days.forEach(date => {
         
-        if (date.innerText != '' ) {
-            // remainingDays(date);
-            date.parentNode.querySelector('.remainingDays').innerText = remainingDays(date.innerText);
+        if (date.innerText != "" ) {
+            date.parentNode.querySelector(".remainingDays").innerText = remainingDays(date.innerText);
         }
     });
 
