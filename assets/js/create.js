@@ -90,7 +90,7 @@ function generateHTML(data) {
 
     const modifyItemImg = document.createElement("img");
     modifyItemImg.src = "./assets/img/crayon-de-couleur.png";
-    task.appendChild(modifyItemImg);
+    modifyItem.appendChild(modifyItemImg);
     modifyItemImg.classList.add("modifyItemImg");
 
     const remainingDays = document.createElement("div");
