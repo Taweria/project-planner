@@ -31,25 +31,30 @@ function generateHTML(data) {
     task.appendChild(delItem);
     delItem.classList.add("delItem");
 
-        const delItemImg = document.createElement("img");
-        delItemImg.src = "./assets/img/poubelle.png";
-        delItem.appendChild(delItemImg);
-        delItemImg.classList.add("delItemImg");
+    const delItemImg = document.createElement("img");
+    delItemImg.src = "./assets/img/poubelle.png";
+    delItem.appendChild(delItemImg);
+    delItemImg.classList.add("delItemImg");
 
-        //attacher un gestionnaire d'événement au bouton de supression
-        delItem.addEventListener('click', () => {
-            //supprimer la div entière
-            task.remove();
-        });
+    //attacher un gestionnaire d'événement au bouton de supression
+    delItem.addEventListener('click', () => {
+        //supprimer la div entière
+        task.remove();
+    });
+
 
     const modifyItem = document.createElement("button");
     task.appendChild(modifyItem);
     modifyItem.classList.add("modifyItem");
 
-        const modifyItemImg = document.createElement("img");
-        modifyItemImg.src = "./assets/img/crayon-de-couleur.png";
-        task.appendChild(modifyItemImg);
-        modifyItemImg.classList.add("modifyItemImg");
+    const modifyItemImg = document.createElement("img");
+    modifyItemImg.src = "./assets/img/crayon-de-couleur.png";
+    task.appendChild(modifyItemImg);
+    modifyItemImg.classList.add("modifyItemImg");
+
+    const remainingDays = document.createElement("div");
+    task.appendChild(remainingDays);
+    remainingDays.classList.add("remainingDays");
 
     tasks.appendChild(task);
 
@@ -85,7 +90,7 @@ form.addEventListener("submit", (e) => {
     days.forEach(date => {
         
         if (date.innerText != "" ) {
-            date.parentNode.querySelector(".remainingDays").innerText = remainingDays(date.innerText);
+            date.parentNode.querySelector(".remainingDays").innerText = remainingDays(date.innerText) + " day(s) remaining";
         }
     });
 
