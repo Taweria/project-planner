@@ -65,5 +65,6 @@ form.addEventListener("submit", (e) => {
 
     console.log(currentData);
     generateHTML(currentData);
+    addToLocaleStorage(currentData);
     resetForm();
 })
