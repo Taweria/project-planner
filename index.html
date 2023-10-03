@@ -7,8 +7,8 @@
     <title>Project planner</title>
     <link rel="stylesheet" href="assets/dist/style.css" type="text/css">
     <script defer src="assets/js/main.js"></script>
-    <script defer src="assets/js/delete.js"></script>
     <script defer src="assets/js/create.js"></script>
+    <script defer src="assets/js/delete.js"></script>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
         </select>
         <label for="filter">Filter</label>
         <select name="filter" id="filter">
-            <option value="none"></option>
+            <option value="none">-- Choose an option --</option>
             <option value="toDo">To do</option>
             <option value="doing">Doing</option>
             <option value="done">Done</option>
@@ -41,7 +41,7 @@
                 <input name="description" type="text" id="desc" placeholder="Description">
                 <label for="pending"></label>
                 <select name="pending" id="pending">
-                    <option value="none"></option>
+                    <option value="none">-- Choose an option --</option>
                     <option value="To Do">To Do</option>
                     <option value="Doing">Doing</option>
                     <option value="Done">Done</option>
