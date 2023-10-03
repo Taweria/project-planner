@@ -7,6 +7,7 @@
     <title>Project planner</title>
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
     <script defer src="assets/js/main.js"></script>
+    <script defer src="assets/js/create.js"></script>
 </head>
 
 <body>
@@ -29,7 +30,7 @@
 
 
     <main>
-        <form>
+        <form id="form">
             <div class="form1">
                 <input name="name" type="text" id="name" placeholder="Name">
                 <input name="date" type="date" id="date">
@@ -40,13 +41,15 @@
                 <label for="pending"></label>
                 <select name="pending" id="pending">
                     <option value="none"></option>
-                    <option value="toDo-form">To Do</option>
-                    <option value="doing-form">Doing</option>
-                    <option value="done-form">Done</option>
+                    <option value="To Do">To Do</option>
+                    <option value="Doing">Doing</option>
+                    <option value="Done">Done</option>
                 </select>
             </div>
+            <button type="submit">Add</button>
         </form>
-        <button>Add</button>
+
+        <div class="tasks"> </div>
     </main>
 </body>
 
