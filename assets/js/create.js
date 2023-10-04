@@ -4,6 +4,7 @@ import { removeFromLocalStorage } from "./localStorage.js";
 
 let tasks = document.querySelector(".tasks");
 
+
 //create elements
 export function generateHTML(data) {
     const task = document.createElement("article");
@@ -65,11 +66,11 @@ export function generateHTML(data) {
                         }
                         break;
                     default:
-                        article.style.display = "block";
                         break;
                 };
             });
         });
+
 
     const delItem = document.createElement("button");
     task.appendChild(delItem);
@@ -97,6 +98,58 @@ export function generateHTML(data) {
     modifyItem.appendChild(modifyItemImg);
     modifyItemImg.classList.add("modifyItemImg");
 
+
+    // allow user to modify cards
+    modifyItem.addEventListener("click", ()=>{
+        // name
+        task.querySelector(".name").contentEditable = "true";
+        
+        // description
+        task.querySelector(".description").contentEditable = "true";
+
+        // date
+        task.querySelector(".date").contentEditable = "true";
+        
+        //status
+        task.querySelector(".status").contentEditable = "true";
+
+        task.addEventListener("keydown", (event)=>{
+            if (event.key.toLowerCase() === "enter") {
+                task.querySelector(".name").contentEditable = "false";
+                task.querySelector(".description").contentEditable = "false";
+                task.querySelector(".date").contentEditable = "false";
+                task.querySelector(".status").contentEditable = "false";
+            }
+            leftDays.textContent = remainingDays(date.textContent);
+        })
+        
+    })
+
+    
+    const sort = document.getElementById('sort');
+    sort.addEventListener('change', function () {
+        const selectedSort = sort.value;
+        const allTasks = document.querySelectorAll('.task');
+        let sortedTasks= Array.from(allTasks).sort(function(a,b) {
+            let valueA, valueB;
+            if(selectedSort === 'urgent') {
+                valueA = a.querySelector(".date").innerText;
+                valueB = b.querySelector(".date").innerText;
+            } else if (selectedSort ==='nom') {
+                valueA = a.querySelector(".name").textContent;
+                valueB = b.querySelector(".name").textContent;
+            }
+            return valueA.localeCompare(valueB)
+        });
+        const tasks = document.querySelector(".tasks");
+        tasks.innerHTML= "";
+        sortedTasks.forEach(function (element) {
+            tasks.appendChild(element);
+        });
+    });
+
+    
+
     const leftDays = document.createElement("div");
     leftDays.textContent = remainingDays(data.date);
     task.appendChild(leftDays);
@@ -105,6 +158,8 @@ export function generateHTML(data) {
     tasks.appendChild(task);
     
 }
+
+
 
 
 // reset form after push add
@@ -129,4 +184,4 @@ form.addEventListener("submit", (e) => {
     generateHTML(currentData);
     addToLocalStorage(currentData);
     resetForm();
-})
+});
