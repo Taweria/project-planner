@@ -11,8 +11,13 @@ module.exports = {
         current: 'currentColor',
         'purple': '#141E46',
         'darkPink': '#C70039',
-        'mediumPink': '#FF6969',
-        'lightPink': '#FFF5E0',
+        'mediumPink': 'rgba(255, 105, 105,0.65)',
+        'lightPink': 'rgba(255, 245, 224,0.76)',
+        'extraLightPink': 'rgba(255, 245, 224,0.37)'
+      },
+      fontFamily: {
+        'fonttext': ['Handlee', 'sans-serif'],
+        'fonttitle': ['Shrikhand', 'serif'],
       },
     }
   },
