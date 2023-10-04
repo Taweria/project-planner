@@ -691,6 +691,11 @@ video {
 
 /* npx tailwindcss -i ./assets/css/style.css -o ./assets/dist/style.css --watch */
 
+.hover\:bg-white:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 @media (min-width: 1024px) {
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
