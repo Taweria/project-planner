@@ -8,12 +8,12 @@ let tasks = document.querySelector(".tasks");
 //create elements
 export function generateHTML(data) {
     const task = document.createElement("article");
-    task.classList.add("task","w-96", "flex", "flex-col", "bg-white", "relative", "rounded-md");
+    task.classList.add("task","w-96", "flex", "flex-col", "bg-white", "relative", "rounded-md", "shadow-md");
 
     const status = document.createElement("div");
     status.textContent = data.pending;
     task.appendChild(status);
-    status.classList.add("status", "w-12", "bg-darkPink", "text-center", "font-bold");
+    status.classList.add("status", "w-12", "bg-darkPink", "text-center", "font-bold", "rounded-tl-lg");
 
     const modifyItem = document.createElement("button");
     task.appendChild(modifyItem);
