@@ -534,12 +534,32 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.m-5 {
-  margin: 1.25rem;
+.absolute {
+  position: absolute;
 }
 
-.m-10 {
-  margin: 2.5rem;
+.relative {
+  position: relative;
+}
+
+.bottom-0 {
+  bottom: 0px;
+}
+
+.right-0 {
+  right: 0px;
+}
+
+.right-8 {
+  right: 2rem;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.top-0\.5 {
+  top: 0.125rem;
 }
 
 .mx-auto {
@@ -547,57 +567,97 @@ video {
   margin-right: auto;
 }
 
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
 .block {
   display: block;
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.w-12 {
+  width: 3rem;
 }
 
 .w-5\/6 {
   width: 83.333333%;
 }
 
-.rounded-xl {
-  border-radius: 0.75rem;
+.w-6 {
+  width: 1.5rem;
 }
 
-.rounded-lg {
-  border-radius: 0.5rem;
+.w-96 {
+  width: 24rem;
 }
 
-.bg-extraLightPink {
-  background-color: rgba(255, 245, 224,0.37);
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
-.bg-mediumPink {
-  background-color: rgba(255, 105, 105,0.65);
+.flex-col {
+  flex-direction: column;
+}
+
+.place-items-center {
+  place-items: center;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.rounded-md {
+  border-radius: 0.375rem;
+}
+
+.bg-darkPink {
+  --tw-bg-opacity: 1;
+  background-color: rgb(199 0 57 / var(--tw-bg-opacity));
 }
 
 .bg-lightPink {
   background-color: rgba(255, 245, 224,0.76);
 }
 
-.text-center {
-  text-align: center;
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.font-fonttitle {
-  font-family: Shrikhand, serif;
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .font-fonttext {
   font-family: Handlee, sans-serif;
 }
 
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
 .font-bold {
   font-weight: 700;
-}
-
-.text-purple {
-  color: rgba(20,30,70,1);
 }
 
 .filter {
@@ -606,17 +666,8 @@ video {
 
 /* npx tailwindcss -i ./assets/css/style.css -o ./assets/dist/style.css --watch */
 
-.hover\:bg-darkPink:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(199 0 57 / var(--tw-bg-opacity));
-}
-
-.focus\:bg-darkPink:focus {
-  --tw-bg-opacity: 1;
-  background-color: rgb(199 0 57 / var(--tw-bg-opacity));
-}
-
-.active\:bg-darkPink:active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(199 0 57 / var(--tw-bg-opacity));
+@media (min-width: 1024px) {
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
