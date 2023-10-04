@@ -111,15 +111,21 @@ export function generateHTML(data) {
     modifyItem.addEventListener("click", ()=>{
         // name
         task.querySelector(".name").contentEditable = "true";
+        task.querySelector(".name").style.border = "1px solid black";
         
         // description
         task.querySelector(".description").contentEditable = "true";
+        task.querySelector(".description").style.border = "1px solid black";
+        
 
         // date
         task.querySelector(".date").contentEditable = "true";
+        task.querySelector(".date").style.border = "1px solid black";
+        // task.querySelector(".date").outerHTML = "<input type='date'>";
         
         //status
         task.querySelector(".status").contentEditable = "true";
+        task.querySelector(".status").style.border = "1px solid black";
 
         task.addEventListener("keydown", (event)=>{
             if (event.key.toLowerCase() === "enter") {
@@ -127,6 +133,11 @@ export function generateHTML(data) {
                 task.querySelector(".description").contentEditable = "false";
                 task.querySelector(".date").contentEditable = "false";
                 task.querySelector(".status").contentEditable = "false";
+
+                task.querySelector(".name").style.border = "";
+                task.querySelector(".description").style.border = "";
+                task.querySelector(".date").style.border = "";
+                task.querySelector(".status").style.border = "";
             }
             leftDays.textContent = remainingDays(date.textContent);
         })
