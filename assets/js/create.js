@@ -6,7 +6,7 @@ let tasks = document.querySelector(".tasks");
 
 
 //create elements
-function generateHTML(data) {
+export function generateHTML(data) {
     const task = document.createElement("article");
     task.classList.add("task");
   
@@ -95,7 +95,7 @@ function generateHTML(data) {
 
     const modifyItemImg = document.createElement("img");
     modifyItemImg.src = "./assets/img/crayon-de-couleur.png";
-    task.appendChild(modifyItemImg);
+    modifyItem.appendChild(modifyItemImg);
     modifyItemImg.classList.add("modifyItemImg");
 
 
@@ -124,12 +124,6 @@ function generateHTML(data) {
         })
         
     })
-
-    const remainingDaysDiv = document.createElement("div");
-    task.appendChild(remainingDaysDiv);
-    remainingDaysDiv.classList.add("remainingDays");
-
-
 
     
     const sort = document.getElementById('sort');
