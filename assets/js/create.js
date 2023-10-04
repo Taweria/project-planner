@@ -3,7 +3,7 @@ import { remainingDays } from "./remainingDays.js";
 let tasks = document.querySelector(".tasks");
 
 //create elements
-function generateHTML(data) {
+export function generateHTML(data) {
     const task = document.createElement("article");
     task.classList.add("task");
   
@@ -63,6 +63,7 @@ function generateHTML(data) {
                         }
                         break;
                     default:
+                        article.style.display = "block";
                         break;
                 };
             });
@@ -90,7 +91,7 @@ function generateHTML(data) {
 
     const modifyItemImg = document.createElement("img");
     modifyItemImg.src = "./assets/img/crayon-de-couleur.png";
-    task.appendChild(modifyItemImg);
+    modifyItem.appendChild(modifyItemImg);
     modifyItemImg.classList.add("modifyItemImg");
 
     const remainingDays = document.createElement("div");
@@ -135,6 +136,6 @@ form.addEventListener("submit", (e) => {
         }
     });
 
-    addToLocaleStorage(currentData);
+    addToLocalStorage(currentData);
     resetForm();
 })
