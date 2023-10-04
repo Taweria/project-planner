@@ -534,8 +534,17 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .block {
   display: block;
+}
+
+.w-5\/6 {
+  width: 83.333333%;
 }
 
 .bg-lightPink {
