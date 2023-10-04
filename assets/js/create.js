@@ -98,7 +98,33 @@ function generateHTML(data) {
     task.appendChild(modifyItemImg);
     modifyItemImg.classList.add("modifyItemImg");
 
-<<<<<<< HEAD
+
+    // allow user to modify cards
+    modifyItem.addEventListener("click", ()=>{
+        // name
+        task.querySelector(".name").contentEditable = "true";
+        
+        // description
+        task.querySelector(".description").contentEditable = "true";
+
+        // date
+        task.querySelector(".date").contentEditable = "true";
+        
+        //status
+        task.querySelector(".status").contentEditable = "true";
+
+        task.addEventListener("keydown", (event)=>{
+            if (event.key.toLowerCase() === "enter") {
+                task.querySelector(".name").contentEditable = "false";
+                task.querySelector(".description").contentEditable = "false";
+                task.querySelector(".date").contentEditable = "false";
+                task.querySelector(".status").contentEditable = "false";
+            }
+            leftDays.textContent = remainingDays(date.textContent);
+        })
+        
+    })
+
     const remainingDaysDiv = document.createElement("div");
     task.appendChild(remainingDaysDiv);
     remainingDaysDiv.classList.add("remainingDays");
@@ -128,9 +154,8 @@ function generateHTML(data) {
         });
     });
 
-    tasks.appendChild(task);
+    
 
-=======
     const leftDays = document.createElement("div");
     leftDays.textContent = remainingDays(data.date);
     task.appendChild(leftDays);
@@ -138,7 +163,6 @@ function generateHTML(data) {
 
     tasks.appendChild(task);
     
->>>>>>> 5c68929025c352f63345f11746e1978329932ae3
 }
 
 
@@ -164,20 +188,6 @@ form.addEventListener("submit", (e) => {
     }
 
     generateHTML(currentData);
-<<<<<<< HEAD
-
-    let days = document.querySelectorAll(".date");
-    
-    days.forEach(date => {
-        
-        if (date.innerText != "" ) {
-            date.parentNode.querySelector(".remainingDays").innerText = remainingDays(date.innerText) + " day(s) remaining";
-        }
-    });
-
-    addToLocaleStorage(currentData);
-=======
     addToLocalStorage(currentData);
->>>>>>> 5c68929025c352f63345f11746e1978329932ae3
     resetForm();
 });
