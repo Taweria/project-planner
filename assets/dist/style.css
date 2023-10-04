@@ -534,12 +534,42 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.m-5 {
+  margin: 1.25rem;
+}
+
 .block {
   display: block;
 }
 
-.bg-lightPink {
-  background-color: rgba(255, 245, 224,0.76);
+.bg-extraLightPink {
+  background-color: rgba(255, 245, 224,0.37);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-purple {
+  color: rgba(20,30,70,1);
 }
 
 .filter {

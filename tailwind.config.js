@@ -9,7 +9,7 @@ module.exports = {
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
-        'purple': '#141E46',
+        'purple': 'rgba(20,30,70,1)',
         'darkPink': '#C70039',
         'mediumPink': 'rgba(255, 105, 105,0.65)',
         'lightPink': 'rgba(255, 245, 224,0.76)',
