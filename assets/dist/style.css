@@ -534,6 +534,10 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.m-5 {
+  margin: 1.25rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -547,12 +551,12 @@ video {
   width: 83.333333%;
 }
 
-.bg-lightPink {
-  background-color: rgba(255, 245, 224,0.76);
+.bg-extraLightPink {
+  background-color: rgba(255, 245, 224,0.37);
 }
 
-.font-fonttext {
-  font-family: Handlee, sans-serif;
+.bg-lightPink {
+  background-color: rgba(255, 245, 224,0.76);
 }
 
 .filter {
