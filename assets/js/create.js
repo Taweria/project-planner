@@ -2,6 +2,7 @@ import { remainingDays } from "./remainingDays.js";
 
 let tasks = document.querySelector(".tasks");
 
+
 //create elements
 function generateHTML(data) {
     const task = document.createElement("article");
@@ -68,6 +69,7 @@ function generateHTML(data) {
             });
         });
 
+
     const delItem = document.createElement("button");
     task.appendChild(delItem);
     delItem.classList.add("delItem");
@@ -93,16 +95,40 @@ function generateHTML(data) {
     task.appendChild(modifyItemImg);
     modifyItemImg.classList.add("modifyItemImg");
 
-    const remainingDays = document.createElement("div");
-    task.appendChild(remainingDays);
-    remainingDays.classList.add("remainingDays");
+    const remainingDaysDiv = document.createElement("div");
+    task.appendChild(remainingDaysDiv);
+    remainingDaysDiv.classList.add("remainingDays");
+
+
+
+    
+    const sort = document.getElementById('sort');
+    sort.addEventListener('change', function () {
+        const selectedSort = sort.value;
+        const allTasks = document.querySelectorAll('.task');
+        let sortedTasks= Array.from(allTasks).sort(function(a,b) {
+            let valueA, valueB;
+            if(selectedSort === 'urgent') {
+                valueA = a.querySelector(".date").innerText;
+                valueB = b.querySelector(".date").innerText;
+            } else if (selectedSort ==='nom') {
+                valueA = a.querySelector(".name").textContent;
+                valueB = b.querySelector(".name").textContent;
+            }
+            return valueA.localeCompare(valueB)
+        });
+        const tasks = document.querySelector(".tasks");
+        tasks.innerHTML= "";
+        sortedTasks.forEach(function (element) {
+            tasks.appendChild(element);
+        });
+    });
 
     tasks.appendChild(task);
 
-
-   
-    
 }
+
+
 
 
 // reset form after push add
@@ -137,4 +163,4 @@ form.addEventListener("submit", (e) => {
 
     addToLocaleStorage(currentData);
     resetForm();
-})
+});
