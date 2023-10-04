@@ -1,6 +1,7 @@
+import { generateHTML } from "./create.js";
 
 //This function takes an object "task" and add it to the local storage
-function addToLocalStorage(task){
+export function addToLocalStorage(task){
     let tasks = [];    
     if (localStorage.getItem("tasks") !== null) { //If there are already some tasks in the local storage, first retrieve them
         tasks = JSON.parse(localStorage.getItem('tasks'));
@@ -9,7 +10,17 @@ function addToLocalStorage(task){
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
+export function displayLocalStorage() {
+    let tasks = JSON.parse(localStorage.getItem('tasks'));
+    for (let task of tasks){
+        generateHTML(task);
+    }
+}
 
+export function removeFromLocalStorage(task){
+    
+
+}
 
 //Command to clear the local storage:
 // localStorage.clear();

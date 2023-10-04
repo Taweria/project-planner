@@ -1,4 +1,6 @@
 import { remainingDays } from "./remainingDays.js";
+import { addToLocalStorage } from "./localStorage.js";
+import { removeFromLocalStorage } from "./localStorage.js";
 
 let tasks = document.querySelector(".tasks");
 
@@ -82,6 +84,7 @@ function generateHTML(data) {
     //attacher un gestionnaire d'événement au bouton de supression
     delItem.addEventListener('click', () => {
         //supprimer la div entière
+        removeFromLocalStorage(task);
         task.remove();
     });
 
@@ -95,6 +98,7 @@ function generateHTML(data) {
     task.appendChild(modifyItemImg);
     modifyItemImg.classList.add("modifyItemImg");
 
+<<<<<<< HEAD
     const remainingDaysDiv = document.createElement("div");
     task.appendChild(remainingDaysDiv);
     remainingDaysDiv.classList.add("remainingDays");
@@ -126,6 +130,15 @@ function generateHTML(data) {
 
     tasks.appendChild(task);
 
+=======
+    const leftDays = document.createElement("div");
+    leftDays.textContent = remainingDays(data.date);
+    task.appendChild(leftDays);
+    leftDays.classList.add("remainingDays");
+
+    tasks.appendChild(task);
+    
+>>>>>>> 5c68929025c352f63345f11746e1978329932ae3
 }
 
 
@@ -151,6 +164,7 @@ form.addEventListener("submit", (e) => {
     }
 
     generateHTML(currentData);
+<<<<<<< HEAD
 
     let days = document.querySelectorAll(".date");
     
@@ -162,5 +176,8 @@ form.addEventListener("submit", (e) => {
     });
 
     addToLocaleStorage(currentData);
+=======
+    addToLocalStorage(currentData);
+>>>>>>> 5c68929025c352f63345f11746e1978329932ae3
     resetForm();
 });

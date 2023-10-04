@@ -3,4 +3,4 @@ export function remainingDays(dateStr) {
     let date = new Date(dateStr)
     return Math.floor(((date.getTime()-(new Date).getTime())/(1000*60*60*24)) + 1);
 }
-// console.log(remainingDays(new Date('2023-10-10')));
+// console.log(remainingDays('2023-10-10'));
