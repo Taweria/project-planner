@@ -97,6 +97,41 @@ export function generateHTML(data) {
     modifyItem.appendChild(modifyItemImg);
     modifyItemImg.classList.add("modifyItemImg");
 
+
+    // add feature to modify cards
+    modifyItem.addEventListener("click", ()=>{
+        document.querySelector(".name").contentEditable = "true";
+
+        document.querySelector(".name").addEventListener("keydown", (event)=>{
+            if (event.key.toLowerCase() === "enter") {
+                document.querySelector(".name").contentEditable = "false";
+            }
+        })
+        
+        document.querySelector(".description").contentEditable = "true";
+
+        document.querySelector(".description").addEventListener("keydown", (event)=>{
+            if (event.key.toLowerCase() === "enter") {
+                document.querySelector(".description").contentEditable = "false";
+            }
+        })
+        document.querySelector(".date").contentEditable = "true";
+
+        document.querySelector(".date").addEventListener("keydown", (event)=>{
+            if (event.key.toLowerCase() === "enter") {
+                document.querySelector(".date").contentEditable = "false";
+            }
+        })
+        document.querySelector(".status").contentEditable = "true";
+
+        document.querySelector(".status").addEventListener("keydown", (event)=>{
+            if (event.key.toLowerCase() === "enter") {
+                document.querySelector(".status").contentEditable = "false";
+            }
+        })
+    })
+
+    
     const leftDays = document.createElement("div");
     leftDays.textContent = remainingDays(data.date);
     task.appendChild(leftDays);
