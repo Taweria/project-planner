@@ -16,7 +16,7 @@
   /* 2 */
   border-style: solid;
   /* 2 */
-  border-color: #e5e7eb;
+  border-color: currentColor;
   /* 2 */
 }
 
@@ -534,9 +534,17 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.text-blue-500 {
-  --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity));
+.block {
+  display: block;
+}
+
+.bg-purple {
+  --tw-bg-opacity: 1;
+  background-color: rgb(20 30 70 / var(--tw-bg-opacity));
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 /* npx tailwindcss -i ./assets/css/style.css -o ./assets/dist/style.css --watch */
