@@ -55,14 +55,12 @@ export function generateHTML(data) {
     task.appendChild(modifyItemImg);
     modifyItemImg.classList.add("modifyItemImg");
 
-    const remainingDays = document.createElement("div");
-    task.appendChild(remainingDays);
-    remainingDays.classList.add("remainingDays");
+    const leftDays = document.createElement("div");
+    leftDays.textContent = remainingDays(data.date);
+    task.appendChild(leftDays);
+    leftDays.classList.add("remainingDays");
 
     tasks.appendChild(task);
-
-
-   
     
 }
 
@@ -87,16 +85,6 @@ form.addEventListener("submit", (e) => {
     }
 
     generateHTML(currentData);
-
-    let days = document.querySelectorAll(".date");
-    
-    days.forEach(date => {
-        
-        if (date.innerText != "" ) {
-            date.parentNode.querySelector(".remainingDays").innerText = remainingDays(date.innerText) + " day(s) remaining";
-        }
-    });
-
     addToLocalStorage(currentData);
     resetForm();
 })
