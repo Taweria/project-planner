@@ -44,17 +44,17 @@ export function generateHTML(data) {
     const name = document.createElement("div");
     name.textContent = data.name;
     task.appendChild(name);
-    name.classList.add("name", "my-5");
+    name.classList.add("name", "my-5", "mx-2", "font-fonttitle");
 
     const desc = document.createElement("div");
     desc.textContent = data.description;
     task.appendChild(desc);
-    desc.classList.add("description");
+    desc.classList.add("description", "mx-2");
   
     const date = document.createElement("div");
     date.textContent = data.date;
     task.appendChild(date);
-    date.classList.add("date", "my-3");
+    date.classList.add("date", "my-3", "mx-2");
   
     
   
