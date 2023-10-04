@@ -538,6 +538,10 @@ video {
   margin: 1.25rem;
 }
 
+.m-10 {
+  margin: 2.5rem;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -551,12 +555,32 @@ video {
   width: 83.333333%;
 }
 
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
 .bg-extraLightPink {
   background-color: rgba(255, 245, 224,0.37);
 }
 
+.bg-mediumPink {
+  background-color: rgba(255, 105, 105,0.65);
+}
+
 .text-center {
   text-align: center;
+}
+
+.font-fonttitle {
+  font-family: Shrikhand, serif;
+}
+
+.font-fonttext {
+  font-family: Handlee, sans-serif;
 }
 
 .text-4xl {
@@ -577,3 +601,18 @@ video {
 }
 
 /* npx tailwindcss -i ./assets/css/style.css -o ./assets/dist/style.css --watch */
+
+.hover\:bg-darkPink:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(199 0 57 / var(--tw-bg-opacity));
+}
+
+.focus\:bg-darkPink:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgb(199 0 57 / var(--tw-bg-opacity));
+}
+
+.active\:bg-darkPink:active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(199 0 57 / var(--tw-bg-opacity));
+}

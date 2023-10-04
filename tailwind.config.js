@@ -16,8 +16,8 @@ module.exports = {
         'extraLightPink': 'rgba(255, 245, 224,0.37)'
       },
       fontFamily: {
-        'fonttexte': ['Handlee', cursive],
-        'fonttitle': ['Shrikhand', cursive],
+        'fonttext': ['Handlee', 'sans-serif'],
+        'fonttitle': ['Shrikhand', 'serif'],
       },
     }
   },
