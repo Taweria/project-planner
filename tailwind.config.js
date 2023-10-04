@@ -14,7 +14,10 @@ module.exports = {
         'mediumPink': 'rgba(255, 105, 105,0.65)',
         'lightPink': 'rgba(255, 245, 224,0.76)',
         'extraLightPink': 'rgba(255, 245, 224,0.37)'
-        ,
+      },
+      fontFamily: {
+        'fonttexte': ['Handlee', cursive],
+        'fonttitle': ['Shrikhand', cursive],
       },
     }
   },
