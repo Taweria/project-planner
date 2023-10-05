@@ -35,14 +35,14 @@
 
 
     <main>
-        <form id="form" class="w-5/6 mx-auto font-fonttext">
-            <div class="form1">
+        <form id="form" class="w-5/6 mx-auto font-fonttext p-4">
+            <div class="form1 flex">
                 <input name="name" type="text" id="name" placeholder="Name">
                 <input name="date" type="date" id="date">
             </div>
 
-            <div class="form2">
-                <input name="description" type="text" id="desc" placeholder="Description">
+            <textarea name="description" type="text" id="desc" placeholder="Description"></textarea>
+            <div class="form2 flex">
                 <label for="pending"></label>
                 <select name="pending" id="pending">
                     <option value="none">-- Choose an option --</option>
@@ -50,8 +50,8 @@
                     <option value="Doing">Doing</option>
                     <option value="Done">Done</option>
                 </select>
+                <button type="submit">+</button>
             </div>
-            <button type="submit">Add</button>
         </form>
 
         <div class="tasks"> </div>
