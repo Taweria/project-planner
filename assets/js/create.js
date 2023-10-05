@@ -1,6 +1,7 @@
 import { remainingDays } from "./remainingDays.js";
 import { addToLocalStorage } from "./localStorage.js";
 import { removeFromLocalStorage } from "./localStorage.js";
+import { replaceInLocalStorage } from "./localStorage.js";
 
 let tasks = document.querySelector(".tasks");
 
@@ -36,7 +37,7 @@ export function generateHTML(data) {
     //attacher un gestionnaire d'événement au bouton de supression
     delItem.addEventListener('click', () => {
         //supprimer la div entière
-        removeFromLocalStorage(data);
+        removeFromLocalStorage(task);
         task.remove();
     });
 
@@ -111,21 +112,25 @@ export function generateHTML(data) {
 
     // allow user to modify cards
     modifyItem.addEventListener("click", ()=>{
+        let old = {};
         // name
+        old.name = task.querySelector(".name").textContent;
         task.querySelector(".name").contentEditable = "true";
         task.querySelector(".name").style.border = "1px solid black";
         
         // description
+        old.description = task.querySelector(".description").textContent;
         task.querySelector(".description").contentEditable = "true";
         task.querySelector(".description").style.border = "1px solid black";
         
-
         // date
+        old.date = task.querySelector(".date").textContent;
         task.querySelector(".date").contentEditable = "true";
         task.querySelector(".date").style.border = "1px solid black";
         // task.querySelector(".date").outerHTML = "<input type='date'>";
         
         //status
+        old.status = task.querySelector(".status").textContent;
         task.querySelector(".status").contentEditable = "true";
         task.querySelector(".status").style.border = "1px solid black";
 
@@ -140,6 +145,8 @@ export function generateHTML(data) {
                 task.querySelector(".description").style.border = "";
                 task.querySelector(".date").style.border = "";
                 task.querySelector(".status").style.border = "";
+
+                replaceInLocalStorage(old, task);
             }
             leftDays.textContent = remainingDays(date.textContent);
         })
