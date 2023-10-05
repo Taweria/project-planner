@@ -15,22 +15,24 @@
     <script defer type="module" src="assets/js/main.js"></script>
 </head>
 
-<body class="bg-lightPink">
+<body class="bg-extraLightPink font-fonttext">
     <header>
-        <h1>My Planner</h1>
-        <label for="sort">Sort</label>
-        <select name="sort" id="sort">
-            <option value="none"></option>
-            <option value="urgent">Urgent</option>
-            <option value="nom">name</option>
-        </select>
-        <label for="filter">Filter</label>
-        <select name="filter" id="filter">
-            <option value="none">-- Choose an option --</option>
-            <option value="toDo">To do</option>
-            <option value="doing">Doing</option>
-            <option value="done">Done</option>
-        </select>
+        <h1 class="text-purple text-4xl text-center font-bold m-5 font-fonttitle">My Planner</h1>
+        <div class="text-center">
+            <label for="sort"></label>
+            <select name="sort" id="sort" class="bg-mediumPink m-5 rounded-lg">
+                <option value="none">Sort</option>
+                <option value="urgent">Urgent</option>
+                <option value="nom">Name</option>
+            </select>
+            <label for="filter"></label>
+            <select name="filter" id="filter" class="bg-mediumPink m-5 rounded-lg">
+                <option value="none">Filter</option>
+                <option value="toDo">To do</option>
+                <option value="doing">Doing</option>
+                <option value="done">Done</option>
+            </select>
+        </div>
     </header>
 
 
@@ -54,7 +56,7 @@
             </div>
         </form>
 
-        <div class="tasks"> </div>
+        <div class="tasks grid grid-cols-1 place-items-center gap-4 lg:grid-cols-3"> </div>
     </main>
 </body>
 
