@@ -37,26 +37,33 @@
 
 
     <main>
-        <form id="form" class="w-5/6 mx-auto font-fonttext p-4">
-            <div class="form1 flex">
-                <input name="name" type="text" id="name" placeholder="Name">
-                <input name="date" type="date" id="date">
+        <form id="form"
+            class="bg-gradient-to-r from-darkPink via-mediumPink to-lightPink rounded-md shadow-md w-min grid grid-cols-[2fr_2fr_auto] grid-rows[1fr_1fr] m-auto">
+            <div class=" row-start-1 row-end-2 col-start-1 col-end-2 m-1">
+                <input name="name" type="text" id="name" placeholder="Name" class="rounded-md">
             </div>
-
-            <textarea name="description" type="text" id="desc" placeholder="Description"></textarea>
-            <div class="form2 flex">
+            <div class="form2 row-start-1 row-end-2 col-start-2 col-end-3 m-1">
+                <input name="date" type="date" id="date" class="rounded-md">
+            </div>
+            <div class="form3 row-start-2 row-end-3 col-start-1 col-end-2 m-1">
+                <textarea name="description" type="text" id="desc" placeholder="Description"
+                    class="rounded-md"></textarea>
+            </div>
+            <div class="form4 row-start-2 row-end-3 col-start-2 col-end-3 m-1">
                 <label for="pending"></label>
-                <select name="pending" id="pending">
+                <select name="pending" id="pending" class="rounded-md">
                     <option value="none">-- Choose an option --</option>
                     <option value="To do">To do</option>
                     <option value="Doing">Doing</option>
                     <option value="Done">Done</option>
                 </select>
-                <button type="submit">+</button>
+            </div>
+            <div class="row-start-2 row-end-3 col-start-3 col-start-4 flex place-items-end m-1">
+                <button type="submit" class="bg-darkPink w-6 h-6 rounded-full">+</button>
             </div>
         </form>
 
-        <div class="tasks grid grid-cols-1 place-items-center gap-4 lg:grid-cols-3"> </div>
+        <div class="tasks grid grid-cols-1 place-items-center gap-4 lg:grid-cols-3 m-4"> </div>
     </main>
 </body>
 
