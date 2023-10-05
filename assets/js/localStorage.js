@@ -17,16 +17,40 @@ export function displayLocalStorage() {
     }
 }
 
+// export function removeFromLocalStorage(task){
+//     let tasks = JSON.parse(localStorage.getItem('tasks'));
+//     tasks.forEach((t,i) => {
+//         if ((t.name == task.name)&&(t.date == task.date)&&(t.description==task.description)){
+//             tasks.splice(i,1);
+//         }
+//     })
+//     localStorage.setItem('tasks', JSON.stringify(tasks));
+// }
 export function removeFromLocalStorage(task){
+    let name = task.querySelector('.name').textContent;
+    let date = task.querySelector('.date').textContent;
+    let description = task.querySelector('.description').textContent;
     let tasks = JSON.parse(localStorage.getItem('tasks'));
-    // let task.query
     tasks.forEach((t,i) => {
-        if ((t.name == task.name)&&(t.date == task.date)&&(t.description==task.description)){
+        if ((t.name == name)&&(t.date == date)&&(t.description==description)){
             tasks.splice(i,1);
         }
     })
     localStorage.setItem('tasks', JSON.stringify(tasks));
+}
 
+//This function takes an object "old" with the old data of a task, and a DOMnode "task" 
+//containing the new data.
+//The function replaces the old data with the new ones in localStorage
+export function replaceInLocalStorage(task, newValues){
+    let tasks = JSON.parse(localStorage.getItem('tasks'));
+    
+    let editedTask = tasks.find((local) => {
+        return local.name === task.name && local.date === task.date && local.description === task.description;
+    });
+    let taskIndex = tasks.indexOf(editedTask);
+    tasks[taskIndex] = newValues;
+    localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 
 //Command to clear the local storage:

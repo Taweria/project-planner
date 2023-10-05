@@ -1,6 +1,7 @@
 import { remainingDays } from "./remainingDays.js";
 import { addToLocalStorage } from "./localStorage.js";
 import { removeFromLocalStorage } from "./localStorage.js";
+import { replaceInLocalStorage } from "./localStorage.js";
 
 let tasks = document.querySelector(".tasks");
 
@@ -36,7 +37,7 @@ export function generateHTML(data) {
     //attacher un gestionnaire d'événement au bouton de supression
     delItem.addEventListener('click', () => {
         //supprimer la div entière
-        removeFromLocalStorage(data);
+        removeFromLocalStorage(task);
         task.remove();
     });
 
@@ -49,7 +50,7 @@ export function generateHTML(data) {
     const desc = document.createElement("div");
     desc.textContent = data.description;
     task.appendChild(desc);
-    desc.classList.add("description", "mx-2");
+    desc.classList.add("description", "mx-2", "whitespace-break-spaces");
   
     const date = document.createElement("div");
     date.textContent = data.date;
@@ -111,6 +112,7 @@ export function generateHTML(data) {
 
     // allow user to modify cards
     modifyItem.addEventListener("click", ()=>{
+        let old = {};
         // name
         task.querySelector(".name").contentEditable = "true";
         task.querySelector(".name").style.border = "1px solid black";
@@ -119,27 +121,48 @@ export function generateHTML(data) {
         task.querySelector(".description").contentEditable = "true";
         task.querySelector(".description").style.border = "1px solid black";
         
-
         // date
-        task.querySelector(".date").contentEditable = "true";
+        // task.querySelector(".date").contentEditable = "true";
         task.querySelector(".date").style.border = "1px solid black";
-        // task.querySelector(".date").outerHTML = "<input type='date'>";
+        let currentDate = task.querySelector(".date").innerText;
+        task.querySelector(".date").innerHTML = "<input type='date'>";
+        task.querySelector(".date").getElementsByTagName("input").value = currentDate;
         
         //status
-        task.querySelector(".status").contentEditable = "true";
+        // task.querySelector(".status").contentEditable = "true";
         task.querySelector(".status").style.border = "1px solid black";
+        task.querySelector(".status").innerHTML = "<select><option value='To do'>To do</option><option value='Doing'>Doing</option><option value='Done'>Done</option></select>";
+        task.querySelector(".status").getElementsByTagName("select")[0].style.backgroundColor = "rgba(255, 105, 105,0.65)"
 
-        task.addEventListener("keydown", (event)=>{
+        document.addEventListener("keydown", (event)=>{
             if (event.key.toLowerCase() === "enter") {
+                // disable edit & style
                 task.querySelector(".name").contentEditable = "false";
                 task.querySelector(".description").contentEditable = "false";
-                task.querySelector(".date").contentEditable = "false";
                 task.querySelector(".status").contentEditable = "false";
-
                 task.querySelector(".name").style.border = "";
                 task.querySelector(".description").style.border = "";
                 task.querySelector(".date").style.border = "";
                 task.querySelector(".status").style.border = "";
+
+                // get value & update view
+                let currentDate = task.querySelector(".date").querySelector("input").value;
+                task.querySelector(".date").innerText = currentDate;
+                
+                let currentStatus = task.querySelector(".status").querySelector("select").value;
+                task.querySelector(".status").innerText = currentStatus;
+
+                // find the edited task in local storage
+                let editedTask = JSON.parse(localStorage.getItem("tasks")).find((task) => {
+                    return task.name === data.name && task.date === data.date && task.description === data.description;
+                });
+
+                replaceInLocalStorage(editedTask, {
+                    name: task.querySelector(".name").textContent,
+                    date: task.querySelector(".date").textContent,
+                    description: task.querySelector(".description").textContent,
+                    pending: task.querySelector(".status").textContent
+                });
             }
             leftDays.textContent = remainingDays(date.textContent);
         })
