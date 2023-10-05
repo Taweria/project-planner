@@ -18,7 +18,14 @@ export function displayLocalStorage() {
 }
 
 export function removeFromLocalStorage(task){
-    
+    let tasks = JSON.parse(localStorage.getItem('tasks'));
+    // let task.query
+    tasks.forEach((t,i) => {
+        if ((t.name == task.name)&&(t.date == task.date)&&(t.description==task.description)){
+            tasks.splice(i,1);
+        }
+    })
+    localStorage.setItem('tasks', JSON.stringify(tasks));
 
 }
 
