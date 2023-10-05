@@ -36,7 +36,7 @@ export function generateHTML(data) {
     //attacher un gestionnaire d'événement au bouton de supression
     delItem.addEventListener('click', () => {
         //supprimer la div entière
-        removeFromLocalStorage(task);
+        removeFromLocalStorage(data);
         task.remove();
     });
 
