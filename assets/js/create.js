@@ -33,11 +33,19 @@ export function generateHTML(data) {
     delItem.appendChild(delItemImg);
     delItemImg.classList.add("delItemImg", "w-6", "absolute", "top-0.5", "right-0");
 
+
     //attacher un gestionnaire d'événement au bouton de supression
     delItem.addEventListener('click', () => {
-        //supprimer la div entière
-        removeFromLocalStorage(task);
-        task.remove();
+        //ajout classe d'animation ->
+        task.classList.add("fade-out");
+        //retirer carte du DOM après la fin de l'anim
+        setTimeout(() => {
+            // //supprimer la div entière
+            removeFromLocalStorage(task);
+            task.remove();
+            //attendre la même durée que l'animation css (1s)
+        },1000);
+        
     });
 
   
@@ -204,3 +212,9 @@ form.addEventListener("submit", (e) => {
     addToLocalStorage(currentData);
     resetForm();
 });
+
+
+
+
+
+
