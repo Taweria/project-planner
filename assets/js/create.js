@@ -141,8 +141,7 @@ export function generateHTML(data) {
         }
         task.querySelector(".date").style.border = "1px solid black";
         let currentDate = task.querySelector(".date").innerText;
-        task.querySelector(".date").innerHTML = "<input type='date'>";
-        task.querySelector(".date").getElementsByTagName("input").value = currentDate;
+        task.querySelector(".date").innerHTML = `<input type='date' value='${currentDate}'>`;
         
         //status
         // task.querySelector(".status").contentEditable = "true";
