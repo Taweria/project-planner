@@ -72,8 +72,10 @@ export function generateHTML(data) {
 
             articleF.forEach(function(article) {
                 const stat = article.querySelector('.status');
-                  
                 switch(selectedValue) {
+                    case "none" :
+                        article.style.display = 'block';
+                        break;
                     case "toDo":
                         if(stat.innerText === 'To do') {
                             article.style.display = 'block';
