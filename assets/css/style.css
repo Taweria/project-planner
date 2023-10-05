@@ -2,4 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.chute {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  }
+
 /* npx tailwindcss -i ./assets/css/style.css -o ./assets/dist/style.css --watch */

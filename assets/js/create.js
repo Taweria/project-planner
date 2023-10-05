@@ -38,7 +38,7 @@ export function generateHTML(data) {
     //attacher un gestionnaire d'événement au bouton de supression
     delItem.addEventListener('click', () => {
         //ajout classe d'animation ->
-        task.classList.add("fade-out");
+        task.classList.add("chute");
         //retirer carte du DOM après la fin de l'anim
         setTimeout(() => {
             // //supprimer la div entière
