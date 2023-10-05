@@ -42,14 +42,21 @@ export function removeFromLocalStorage(task){
 //This function takes an object "old" with the old data of a task, and a DOMnode "task" 
 //containing the new data.
 //The function replaces the old data with the new ones in localStorage
-export function replaceInLocalStorage(task, newValues){
-    let tasks = JSON.parse(localStorage.getItem('tasks'));
+export function replaceInLocalStorage(old, task){
+    let newName = task.querySelector('.name').textContent;
+    let newDate = task.querySelector('.date').textContent;
+    let newDescription = task.querySelector('.description').textContent;
+    let newPending = task.querySelector('.status').textContent;
     
-    let editedTask = tasks.find((local) => {
-        return local.name === task.name && local.date === task.date && local.description === task.description;
-    });
-    let taskIndex = tasks.indexOf(editedTask);
-    tasks[taskIndex] = newValues;
+    let tasks = JSON.parse(localStorage.getItem('tasks'));
+    tasks.forEach((t,i) => {
+        if ((t.name == old.name)&&(t.date == old.date)&&(t.description == old.description)){
+            t.name = newName;
+            t.date = newDate;
+            t.description = newDescription;
+            t.pending = newPending;
+        }
+    })
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
 

@@ -114,15 +114,23 @@ export function generateHTML(data) {
     modifyItem.addEventListener("click", ()=>{
         let old = {};
         // name
+        old.name = task.querySelector(".name").textContent;
         task.querySelector(".name").contentEditable = "true";
         task.querySelector(".name").style.border = "1px solid black";
         
         // description
+        old.description = task.querySelector(".description").textContent;
         task.querySelector(".description").contentEditable = "true";
         task.querySelector(".description").style.border = "1px solid black";
         
         // date
         // task.querySelector(".date").contentEditable = "true";
+        if (task.querySelector(".date").querySelector("input") == null) {
+            old.date = task.querySelector(".date").textContent;
+        }
+        else {
+            old.date = task.querySelector(".date").querySelector("input").value;
+        }
         task.querySelector(".date").style.border = "1px solid black";
         let currentDate = task.querySelector(".date").innerText;
         task.querySelector(".date").innerHTML = "<input type='date'>";
@@ -130,6 +138,12 @@ export function generateHTML(data) {
         
         //status
         // task.querySelector(".status").contentEditable = "true";
+        if (task.querySelector(".status").querySelector("select") == null) {
+            old.status = task.querySelector(".status").textContent;
+        }
+        else {
+            old.status = task.querySelector(".status").querySelector("select").value;
+        }
         task.querySelector(".status").style.border = "1px solid black";
         task.querySelector(".status").innerHTML = "<select><option value='To do'>To do</option><option value='Doing'>Doing</option><option value='Done'>Done</option></select>";
         task.querySelector(".status").getElementsByTagName("select")[0].style.backgroundColor = "rgba(255, 105, 105,0.65)"
@@ -146,23 +160,26 @@ export function generateHTML(data) {
                 task.querySelector(".status").style.border = "";
 
                 // get value & update view
-                let currentDate = task.querySelector(".date").querySelector("input").value;
+                console.log(task.querySelector(".date"));
+                let currentDate;
+                if (task.querySelector(".date").querySelector("input") == null) {
+                    currentDate = task.querySelector(".date").textContent;
+                }
+                else {
+                    currentDate = task.querySelector(".date").querySelector("input").value;
+                }
                 task.querySelector(".date").innerText = currentDate;
                 
-                let currentStatus = task.querySelector(".status").querySelector("select").value;
+                let currentStatus;
+                if (task.querySelector(".status").querySelector("select") == null) {
+                    currentStatus = task.querySelector(".status").textContent;
+                }
+                else {
+                    currentStatus = task.querySelector(".status").querySelector("select").value;
+                }
                 task.querySelector(".status").innerText = currentStatus;
 
-                // find the edited task in local storage
-                let editedTask = JSON.parse(localStorage.getItem("tasks")).find((task) => {
-                    return task.name === data.name && task.date === data.date && task.description === data.description;
-                });
-
-                replaceInLocalStorage(editedTask, {
-                    name: task.querySelector(".name").textContent,
-                    date: task.querySelector(".date").textContent,
-                    description: task.querySelector(".description").textContent,
-                    pending: task.querySelector(".status").textContent
-                });
+                replaceInLocalStorage(old, task);
             }
             leftDays.textContent = remainingDays(date.textContent);
         })
