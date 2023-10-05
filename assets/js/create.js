@@ -13,7 +13,7 @@ export function generateHTML(data) {
     const status = document.createElement("div");
     status.textContent = data.pending;
     task.appendChild(status);
-    status.classList.add("status", "w-12", "bg-darkPink", "text-center", "font-bold", "rounded-tl-lg");
+    status.classList.add("status", "w-12", "bg-darkPink", "text-center", "font-bold", "rounded-tl-lg", "text-lightPink");
 
     const modifyItem = document.createElement("button");
     task.appendChild(modifyItem);
@@ -172,7 +172,7 @@ export function generateHTML(data) {
     const leftDays = document.createElement("div");
     leftDays.textContent = remainingDays(data.date);
     task.appendChild(leftDays);
-    leftDays.classList.add("remainingDays", "absolute", "bottom-0", "right-0", "bg-darkPink", "px-2", "rounded");
+    leftDays.classList.add("remainingDays", "absolute", "bottom-0", "right-0", "bg-darkPink", "px-2", "rounded", "text-lightPink");
 
     tasks.appendChild(task);
     
