@@ -997,12 +997,12 @@ video {
   font-weight: 700;
 }
 
-.text-lightPink {
-  color: rgba(255, 245, 224,0.76);
-}
-
 .text-purple {
   color: rgba(20,30,70,1);
+}
+
+.text-lightPink {
+  color: rgba(255, 245, 224,0.76);
 }
 
 .shadow-md {
