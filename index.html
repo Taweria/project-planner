@@ -20,13 +20,13 @@
         <h1 class="text-purple text-4xl text-center font-bold m-5 font-fonttitle">My Planner</h1>
         <div class="text-center">
             <label for="sort"></label>
-            <select name="sort" id="sort" class="bg-mediumPink m-5 rounded-lg">
+            <select name="sort" id="sort" class="bg-mediumPink m-5 rounded-lg px-2 py-1">
                 <option value="none">Sort</option>
                 <option value="urgent">Urgent</option>
                 <option value="nom">Name</option>
             </select>
             <label for="filter"></label>
-            <select name="filter" id="filter" class="bg-mediumPink m-5 rounded-lg">
+            <select name="filter" id="filter" class="bg-mediumPink m-5 rounded-lg px-2 py-1">
                 <option value="none">Filter</option>
                 <option value="toDo">To do</option>
                 <option value="doing">Doing</option>
@@ -40,14 +40,14 @@
         <form id="form"
             class="bg-gradient-to-r from-darkPink via-mediumPink to-lightPink rounded-md shadow-md w-min grid grid-cols-[2fr_2fr_auto] grid-rows[1fr_1fr] m-auto">
             <div class=" row-start-1 row-end-2 col-start-1 col-end-2 m-1">
-                <input name="name" type="text" id="name" placeholder="Name" class="rounded-md">
+                <input name="name" type="text" id="name" placeholder="Name" class="rounded-md pl-1">
             </div>
             <div class="form2 row-start-1 row-end-2 col-start-2 col-end-3 m-1">
-                <input name="date" type="date" id="date" class="rounded-md">
+                <input name="date" type="date" id="date" class="rounded-md px-1">
             </div>
             <div class="form3 row-start-2 row-end-3 col-start-1 col-end-2 m-1">
                 <textarea name="description" type="text" id="desc" placeholder="Description"
-                    class="rounded-md"></textarea>
+                    class="rounded-md pl-1"></textarea>
             </div>
             <div class="form4 row-start-2 row-end-3 col-start-2 col-end-3 m-1">
                 <label for="pending"></label>
@@ -59,7 +59,7 @@
                 </select>
             </div>
             <div class="row-start-2 row-end-3 col-start-3 col-start-4 flex place-items-end m-1">
-                <button type="submit" class="bg-darkPink w-6 h-6 rounded-full">+</button>
+                <button type="submit" class="bg-darkPink w-6 h-6 rounded-full text-white font-bold text-xl">+</button>
             </div>
         </form>
 
