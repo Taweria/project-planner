@@ -22,6 +22,11 @@ export function removeFromLocalStorage(task){
 
 }
 
+function deleteItem() {
+    localStorage.removeItem("task");
+}
+
+
 //Command to clear the local storage:
 // localStorage.clear();
 

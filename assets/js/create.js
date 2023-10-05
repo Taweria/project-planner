@@ -34,10 +34,9 @@ export function generateHTML(data) {
     delItemImg.classList.add("delItemImg", "w-6", "absolute", "top-0.5", "right-0");
 
     //attacher un gestionnaire d'événement au bouton de supression
-    delItem.addEventListener('click', () => {
-        //supprimer la div entière
-        removeFromLocalStorage(task);
+    delItem.addEventListener('click', function removeItem() {
         task.remove();
+        // localStorage.removeItem(task);
     });
 
   
